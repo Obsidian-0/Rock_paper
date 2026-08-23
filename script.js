@@ -33,7 +33,7 @@ function play_round(computer_choice, human_choice) {
 
         }
         else if (human_choice == 'Scissor') {
-            result.textContent = "Yahoo, i picked rock! looooser!!!";
+            result.textContent= "Yahoo, i picked rock! looooser!!!";
             robot_span.textContent = `Robot's Score:${++computerscore}`;
             // console.log(`Score so far is : ${humanscore} / ${++computerscore}`)
         }
@@ -45,19 +45,29 @@ function play_round(computer_choice, human_choice) {
             robot_span.textContent = `Robot's Score:${++computerscore}`;
         }
         else if (human_choice == 'Scissor') {
-            result.textContent = 'Phewww.. !You Won';
+            result.textContent ='Phewww.. !You Won';
             human_span.textContent = `Your Score:${++humanscore}`;
         }
     }
     else if (computer_choice == 'Scissor') {
         if (human_choice == 'Rock') {
-            result.textContent = 'Phewww.. !You Won';
+            result.textContent ='Phewww.. !You Won';
             human_span.textContent = `Your Score:${++humanscore}`;
         }
         else if (human_choice == 'Paper') {
-            console.log('Yahoo, i picked scissor! looooser!!!');
-            console.log(`Score so far is : ${humanscore} / ${++computerscore}`)
+            result.textContent ='Yahoo, i picked scissor! looooser!!!';
+            robot_span.textContent = `Robot's Score:${++computerscore}`;
         }
     }
+    if(humanscore==5){
+    result.textContent = `Final Winner here is: You`;
+    human_span.textContent = "Your Score: 0";
+    humanscore = 0;
 }
-
+if(computerscore==5){
+    result.textContent = 'Final Winner here is : Me ';
+    robot_span.textContent = "Robot's Score: 0";
+    computerscore = 0;
+}
+}
+get_human_choice();
