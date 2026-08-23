@@ -46,4 +46,4 @@ function play_round(computer_choice, human_choice){
         }
     }   
 }
-
+play_round(get_computer_choice(),get_human_choice())
