@@ -59,5 +59,15 @@ function play_round(computer_choice, human_choice) {
             robot_span.textContent = `Robot's Score:${++computerscore}`;
         }
     }
+    if(humanscore==5){
+    result.textContent = `Final Winner here is: You`;
+    human_span.textContent = "Your Score: 0";
+    humanscore = 0;
+}
+if(computerscore==5){
+    result.textContent = 'Final Winner here is : Me ';
+    robot_span.textContent = "Robot's Score: 0";
+    computerscore = 0;
+}
 }
 get_human_choice();
