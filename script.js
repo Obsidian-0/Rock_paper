@@ -8,7 +8,13 @@ function get_computer_choice(){
 function get_human_choice(){
    const cont = document.querySelector('.cont')
    cont.addEventListener('click',(e)=>{
-    console.log(e.target.tagName);
+    const item_selected = e.target.tagName;
+    
+    if(item_selected=='BUTTON'){
+       const human_choice= e.target.textContent;
+       play_round(get_computer_choice(),human_choice)
+    }
+    
    })
 }
 function play_round(computer_choice, human_choice){
@@ -31,13 +37,13 @@ function play_round(computer_choice, human_choice){
             console.log(`Score so far is : ${humanscore} / ${++computerscore}`)
         }
         else if(human_choice=='Scissor'){
-            console.log('Phewww..!You Won');
+            console.log('Phewww.. !You Won');
             console.log(`Score so far is : ${++humanscore} / ${computerscore}`)
         }
     }
     else if (computer_choice=='Scissor'){
         if(human_choice=='Rock'){
-            console.log('Phewww..!You Won');
+            console.log('Phewww.. !You Won');
             console.log(`Score so far is : ${++humanscore} / ${computerscore}`)
         }
         else if(human_choice=='Paper'){
@@ -46,4 +52,4 @@ function play_round(computer_choice, human_choice){
         }
     }   
 }
-
+get_human_choice();
