@@ -6,10 +6,10 @@ function get_computer_choice(){
     return pick;
 }
 function get_human_choice(){
-    let choice=['Rock','Paper','Scissor']
-    let pick = parseInt(prompt('Enter your choice: 1 for Rock, 2 for Paper, 3 for Scissor'))
-    console.log(choice[pick-1])
-    return choice[pick-1];
+   const cont = document.querySelector('.cont')
+   cont.addEventListener('click',(e)=>{
+    console.log(e.target.tagName);
+   })
 }
 function play_round(computer_choice, human_choice){
     if(computer_choice==human_choice){
